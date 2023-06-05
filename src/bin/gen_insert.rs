@@ -12,11 +12,11 @@ use datafusion_benchmarks::tpch::{get_tpch_table_schema, TPCH_TABLES};
 #[clap(author, version, about, long_about = None)]
 pub struct Giconfig {
     /// Input path
-    #[arg(value_parser, long = "input", default_value = "./dataout/")]
+    #[arg(value_parser, long = "input", default_value = "./datareduce/")]
     input_path: PathBuf,
 
     /// Output path
-    #[arg(value_parser, long = "output", default_value = "./valueout")]
+    #[arg(value_parser, long = "output", default_value = "./datainsert")]
     output_path: PathBuf,
 }
 

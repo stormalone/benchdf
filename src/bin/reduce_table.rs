@@ -28,7 +28,7 @@ pub struct Rtconfig {
     input_path: PathBuf,
 
     /// Output path
-    #[arg(value_parser, long = "output", default_value = "./dataout")]
+    #[arg(value_parser, long = "output", default_value = "./datareduce")]
     output_path: PathBuf,
 }
 
