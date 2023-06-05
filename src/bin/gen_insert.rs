@@ -51,12 +51,12 @@ pub fn process_values(input_path: &str, output_path: &str) -> std::io::Result<()
         let output_path = format!("{output_path}");
         //println!("{:?}", output_path);
 
-        let _ = get_vec_from_file(table, input_path.as_str(), output_path.as_str());
+        let _ = process_table_from_file(table, input_path.as_str(), output_path.as_str());
     }
     Ok(())
 }
 
-fn get_vec_from_file(
+fn process_table_from_file(
     table_name: &str,
     input_path: &str,
     output_path: &str,
