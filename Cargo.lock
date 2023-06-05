@@ -751,6 +751,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "datafusion-benchmarks"
+version = "0.1.0"
+dependencies = [
+ "arrow",
+ "arrow-schema",
+ "clap 4.3.0",
+ "csv",
+ "datafusion",
+ "datafusion-proto",
+ "env_logger",
+ "futures",
+ "mimalloc",
+ "num_cpus",
+ "parquet",
+ "serde",
+ "serde_json",
+ "snmalloc-rs",
+ "structopt",
+ "tokio",
+]
+
+[[package]]
 name = "datafusion-common"
 version = "25.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -885,28 +907,6 @@ dependencies = [
  "datafusion-expr",
  "log",
  "sqlparser",
-]
-
-[[package]]
-name = "datafusion_benchmarks"
-version = "0.1.0"
-dependencies = [
- "arrow",
- "arrow-schema",
- "clap 4.3.0",
- "csv",
- "datafusion",
- "datafusion-proto",
- "env_logger",
- "futures",
- "mimalloc",
- "num_cpus",
- "parquet",
- "serde",
- "serde_json",
- "snmalloc-rs",
- "structopt",
- "tokio",
 ]
 
 [[package]]
