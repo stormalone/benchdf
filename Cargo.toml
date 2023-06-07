@@ -3,10 +3,13 @@ name = "datafusion-benchmarks"
 version = "0.1.0"
 authors = ["michael storm angerman"]
 edition = "2021"
-default-run = "gen_insert"
+default-run = "sqlrun"
 
 [dependencies]
 arrow = { version = "39.0.0", features = ["prettyprint"] }
+arrow-array = "39.0.0"
+arrow-cast = "39.0.0"
+arrow-flight = { version = "39.0.0", features = ["cli", "flight-sql-experimental", "tls"] }
 arrow-schema = { version = "39.0.0" }
 clap = { version = "4.3", features = ["derive"] }
 csv = "1.2"
@@ -21,6 +24,9 @@ serde_json = "1.0.78"
 snmalloc-rs = { version = "0.3", optional = true }
 structopt = { version = "0.3", default-features = false }
 tokio = { version = "^1.0", features = ["macros", "rt", "rt-multi-thread", "parking_lot"] }
+tonic = { version = "0.9", default-features = false, features = ["transport", "codegen", "prost"] }
+tracing-log = { version = "0.1"}
+tracing-subscriber = { version = "0.3.1", default-features = false, features = ["ansi", "fmt"]}
 
 [dev-dependencies]
 datafusion-proto = "25.0.0"
