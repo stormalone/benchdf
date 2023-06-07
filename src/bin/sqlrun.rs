@@ -64,31 +64,31 @@ struct ClientArgs {
     /// Additional headers.
     ///
     /// Values should be key value pairs separated by ':'
-    #[clap(long, value_delimiter = ',')]
+    #[arg(long, value_delimiter = ',')]
     headers: Vec<KeyValue<String, String>>,
 
     /// Username
-    #[clap(long)]
+    #[arg(long)]
     username: Option<String>,
 
     /// Password
-    #[clap(long)]
+    #[arg(long)]
     password: Option<String>,
 
     /// Auth token.
-    #[clap(long)]
+    #[arg(long)]
     token: Option<String>,
 
     /// Use TLS.
-    #[clap(long)]
+    #[arg(long)]
     tls: bool,
 
     /// Server host.
-    #[clap(long)]
+    #[arg(long)]
     host: String,
 
     /// Server port.
-    #[clap(long)]
+    #[arg(long)]
     port: Option<u16>,
 }
 
