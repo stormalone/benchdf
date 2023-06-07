@@ -68,11 +68,11 @@ struct ClientArgs {
     headers: Vec<KeyValue<String, String>>,
 
     /// Username
-    #[arg(long)]
+    #[arg(value_parser, long = "username", default_value = "admin")]
     username: Option<String>,
 
     /// Password
-    #[arg(long)]
+    #[arg(value_parser, long = "password", default_value = "password")]
     password: Option<String>,
 
     /// Auth token.
@@ -84,11 +84,12 @@ struct ClientArgs {
     tls: bool,
 
     /// Server host.
-    #[arg(long)]
+    #[arg(value_parser, long = "host", default_value = "0.0.0.0")]
     host: String,
 
     /// Server port.
     #[arg(long)]
+    #[arg(value_parser, long = "port", default_value = "50060")]
     port: Option<u16>,
 }
 
@@ -99,6 +100,7 @@ struct Args {
     client_args: ClientArgs,
 
     /// SQL query.
+    #[arg(value_parser, long = "query", default_value = "select * from region;")]
     query: String,
 }
 
