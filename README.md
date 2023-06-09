@@ -6,7 +6,7 @@ To get up and running you will need to create two directories in this repo
 
 First grab the *data* directory from datafusion/benchmarks
 
-* [Instructions are here on for generating a data directory](https://github.com/apache/arrow-datafusion/tree/main/benchmarks#generating-data)
+* [Instructions are here for generating a data directory](https://github.com/apache/arrow-datafusion/tree/main/benchmarks#generating-data)
 
 Second grab the *queries* directory from datafusion/benchmarks
 
