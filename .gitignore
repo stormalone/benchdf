@@ -2,4 +2,6 @@ target/
 data
 datainsert
 datareduce
+queries
 data.tar.gz
+queries.tar.gz
