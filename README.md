@@ -40,7 +40,8 @@ This will then pull the data out of *datareduce* and create a bunch of sql inser
 ./sql/query.sh
 ```
 
-Now that the sql insert statements have been created simply run the above insert script and to make sure the data has landed in your db run the query script second.
+* Now that the sql insert statements have been created simply run the above insert script.   
+* Then to make sure the data has landed in your db run the query script second.
 
 ```rust
 cargo run --bin sqlrun
