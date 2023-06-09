@@ -111,7 +111,10 @@ async fn main() {
     let args = Args::parse();
     setup_logging();
 
-    let sql = &get_query_sql(14);
+    // queries that work 1, 13, 14, 16, 22
+    // queries that go through but return no results 3, 4, 6, 10, 11, 12, 17, 18, 19, 20
+    // queries that break 2, 5, 7, 8, 9, 21
+    let sql = &get_query_sql(1);
     for query in sql {
         do_query(args.client_args.clone(), &query[0]).await
     }
