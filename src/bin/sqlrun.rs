@@ -108,12 +108,13 @@ struct Args {
 async fn main() {
     let args = Args::parse();
     setup_logging();
-    do_query(args.client_args, args.query).await
+    do_query(args.client_args, &args.query).await
 }
 
-async fn do_query(client_args: ClientArgs, query: String) {
+async fn do_query(client_args: ClientArgs, query_str: &str) {
     let mut client = setup_client(client_args).await.expect("setup client");
 
+    let query = query_str.into();
     let info = client.execute(query).await.expect("prepare statement");
     info!("got flight info");
 
