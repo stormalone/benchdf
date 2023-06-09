@@ -28,6 +28,8 @@ use futures::TryStreamExt;
 use tonic::transport::{Channel, ClientTlsConfig, Endpoint};
 use tracing_log::log::info;
 
+use datafusion_benchmarks::tpch::get_query_sql;
+
 /// A ':' separated key value pair
 #[derive(Debug, Clone)]
 struct KeyValue<K, V> {
@@ -59,7 +61,7 @@ where
     }
 }
 
-#[derive(Debug, Parser)]
+#[derive(Debug, Clone, Parser)]
 struct ClientArgs {
     /// Additional headers.
     ///
@@ -108,7 +110,13 @@ struct Args {
 async fn main() {
     let args = Args::parse();
     setup_logging();
-    do_query(args.client_args, &args.query).await
+
+    let sql = &get_query_sql(2);
+    for query in sql {
+        do_query(args.client_args.clone(), &query[0]).await
+    }
+
+    //do_query(args.client_args, &args.query).await
 }
 
 async fn do_query(client_args: ClientArgs, query_str: &str) {
