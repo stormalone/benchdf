@@ -9,17 +9,32 @@ Then run the following command
 cargo run --bin reduce_table
 ```
 
-This will reduce the data down from a big table with millions of rows down to a tiny table with 1000 rows.
+This will reduce the data down from a big table with millions of rows down to a tiny table with *row_capacity* rows and it will put the data in a directory called *datareduce*.
+
+You can select how many rows you want in your table by modifying this parameter.
+
+```rust
+pub struct Rtconfig {
+    /// The number of rows in a table
+    #[arg(long, default_value_t = 100)]
+    pub row_capacity: usize,
+```
 
 ```rust
 cargo run --bin gen_insert
 ```
+
+This will then pull the data out of *datareduce* and create a bunch of sql insert statements that can be loaded into your database.
 
 ```rust
 ./sql/insert.sh
 ./sql/query.sh
 ```
 
+Now that the sql insert statements have been created simply run the above insert script and to make sure the data has landed in your db run the query script second.
+
 ```rust
 cargo run --bin sqlrun
 ```
+
+Now you can run a subset of the tpch queries and see what results you come up with !
