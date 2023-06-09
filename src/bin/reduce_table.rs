@@ -10,7 +10,7 @@ use datafusion_benchmarks::tpch::TPCH_TABLES;
 #[clap(author, version, about, long_about = None)]
 pub struct Rtconfig {
     /// The number of rows in a table
-    #[arg(long, default_value_t = 20)]
+    #[arg(long, default_value_t = 100)]
     pub row_capacity: usize,
 
     /// Start reading the table at this line
