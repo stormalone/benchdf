@@ -8,8 +8,10 @@ cargo run --bin reduce_table
 cargo run --bin gen_insert
 ```
 
+```rust
 ./sql/insert.sh
 ./sql/query.sh
+```
 
 ```rust
 cargo run --bin sqlrun
