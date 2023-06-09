@@ -4,11 +4,11 @@ To get up and running you will need to create two directories in this repo
 * data
 * queries
 
-* First grab the *data* directory from datafusion/benchmarks
+First grab the *data* directory from datafusion/benchmarks
 
 * [Instructions are here on for generating a data directory](https://github.com/apache/arrow-datafusion/tree/main/benchmarks#generating-data)
 
-* Second grab the *queries* directory from datafusion/benchmarks
+Second grab the *queries* directory from datafusion/benchmarks
 
 * [Copy the queries directory over to this repo](https://github.com/apache/arrow-datafusion/tree/main/benchmarks/queries)
 
