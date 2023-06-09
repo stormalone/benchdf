@@ -111,7 +111,7 @@ async fn main() {
     let args = Args::parse();
     setup_logging();
 
-    let sql = &get_query_sql(2);
+    let sql = &get_query_sql(14);
     for query in sql {
         do_query(args.client_args.clone(), &query[0]).await
     }
