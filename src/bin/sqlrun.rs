@@ -113,10 +113,16 @@ async fn main() {
 
     // queries that work 1, 13, 14, 16, 22
     // queries that go through but return no results 3, 4, 6, 10, 11, 12, 17, 18, 19, 20
-    // queries that break 2, 5, 7, 8, 9, 21
-    let sql = &get_query_sql(1);
-    for query in sql {
-        do_query(args.client_args.clone(), &query[0]).await
+    // queries that break 2, 5, 7, 8, 9, 15, 21
+
+    let working_array = [1, 3, 4, 6, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 22];
+
+    for id in working_array.iter() {
+        println!("\nQuery Id = {}", id);
+        let sql = &get_query_sql(*id);
+        for query in sql {
+            do_query(args.client_args.clone(), &query[0]).await
+        }
     }
 
     //do_query(args.client_args, &args.query).await
